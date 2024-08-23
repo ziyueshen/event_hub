@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: event_hub
+  datasource:
+    # druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://18.221.171.57:3306/event_hub?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: "Event@1234"
+  redis:
+    host: 172.20.248.128 #not 127.0.0.1
+    port: 6379
+    database: 0
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+pic:
+  path: C:\Users\szy\Desktop\cs\code\eventshare_front\public\images\
