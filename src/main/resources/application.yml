@@ -22,4 +22,4 @@ mybatis-plus:
     db-config:
       id-type: ASSIGN_ID
 pic:
-  path: /home/ec2-user/event_hub/code/event_hub_resource
+  path: /home/ec2-user/event_hub/code/event_hub_resource/pic
