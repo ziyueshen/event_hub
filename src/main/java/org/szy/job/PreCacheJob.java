@@ -33,11 +33,9 @@ public class PreCacheJob {
     @Resource
     private RedissonClient redissonClient;
 
-    // 重点用户
-
 
     // execute every day
-    @Scheduled(cron = "0 9 15 * * *")   // sec, min, hr, day, mon, yr
+    @Scheduled(cron = "0 0 9 * * *")   // sec, min, hr, day, mon, yr
     public void doCacheRecommendUser() {
         QueryWrapper<Event> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("id");

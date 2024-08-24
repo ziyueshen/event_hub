@@ -8,11 +8,12 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://18.221.171.57:3306/event_hub?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: "Event@1234"
-  redis:
-    host: 172.20.248.128 #not 127.0.0.1
-    port: 6379
-    database: 0
+      password: ${DATABASE_PASSWORD}
+  data:
+    redis:
+      host: 18.221.171.57
+      port: 6379
+      database: 0
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
@@ -21,4 +22,4 @@ mybatis-plus:
     db-config:
       id-type: ASSIGN_ID
 pic:
-  path: C:\Users\szy\Desktop\cs\code\eventshare_front\public\images\
+  path: /home/ec2-user/event_hub/code/event_hub_resource
