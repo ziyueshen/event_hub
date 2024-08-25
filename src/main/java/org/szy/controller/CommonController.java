@@ -3,10 +3,7 @@ package org.szy.controller;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.szy.common.R;
 import org.szy.entity.Event;
@@ -21,6 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/common")
+@CrossOrigin
 public class CommonController {
     @Value("${pic.path}")
     private String basePath;

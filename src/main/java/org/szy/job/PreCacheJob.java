@@ -35,7 +35,7 @@ public class PreCacheJob {
 
 
     // execute every day
-    @Scheduled(cron = "0 0 10 * * *")   // sec, min, hr, day, mon, yr
+    @Scheduled(cron = "0 0 8 * * *")   // sec, min, hr, day, mon, yr
     public void doCacheRecommendUser() {
         QueryWrapper<Event> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("id");

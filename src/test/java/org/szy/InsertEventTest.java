@@ -24,18 +24,18 @@ public class InsertEventTest {
     public void doInsertEvent() {
         Random random = new Random();
         LocalDateTime now = LocalDateTime.now();
-        long oneYear = 365 * 24 * 60 * 60; // a year in sec
-        long timeRange = 2 * oneYear - oneYear; // 1-2 yrs
+        long timeRange = 365 * 24 * 60 * 60; // a year in sec
+        // long timeRange = 2 * oneYear - oneYear; // 1-2 yrs
 
-        long randomSeconds = TimeUnit.SECONDS.convert(random.nextInt((int) timeRange) + oneYear, TimeUnit.SECONDS);
-        LocalDateTime futureDateTimeStart = now.plusSeconds(randomSeconds);
-        LocalDateTime futureDateTimeEnd = futureDateTimeStart.plusSeconds(60 * 60);
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
         List<Event> eventList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < city.length; j++) {
+            for (int j = 0; j < 1; j++) {
                 for (int k = 0; k < 10; k++) {
+                    long randomSeconds = TimeUnit.SECONDS.convert(random.nextInt((int) timeRange), TimeUnit.SECONDS);
+                    LocalDateTime futureDateTimeStart = now.plusSeconds(randomSeconds);
+                    LocalDateTime futureDateTimeEnd = futureDateTimeStart.plusSeconds(60 * 60);
                     Event event = new Event();
                     int capacity = random.nextInt(7) + 3;
                     String[] formats = allFormat[i];
