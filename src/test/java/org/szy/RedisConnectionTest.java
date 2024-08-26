@@ -12,7 +12,7 @@ public class RedisConnectionTest {
     @Test
     void testRedis() {
         System.out.println(stringRedisTemplate);
-        boolean res = stringRedisTemplate.opsForValue().setIfAbsent("test20 from spring", "val from spring");
+        boolean res = stringRedisTemplate.opsForValue().setIfAbsent("test2102 from spring", "val from spring");
         System.out.println(res);
     }
 }
