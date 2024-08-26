@@ -93,11 +93,8 @@ public class EventController {
         event.setCreatorId(userID);
         event.setStatus(0);
         event.setNumSignedUp(0);
-        //event.setStartSignUpTime(LocalDateTime.now());
-        //event.setEndSignUpTime(event.getStartTime());
         event.setEndTime(event.getStartTime());
         event.setUpdateTime(LocalDateTime.now());
-        //eventService.updateById(event);
         eventService.update(event);
         eventService.saveEvent2Redis(event.getId(), 10L);
         return R.success();
@@ -110,16 +107,11 @@ public class EventController {
         Long userId = BaseContext.getCurrentId();
         queryWrapper.eq(Event::getCreatorId, userId);
         eventService.page(eventPage, queryWrapper);
-//        List<Event> list = null;
-//        list = eventService.list(queryWrapper);
-//        Map<String, List<Event>> mp = new HashMap<>();
-//        mp.put("items", list);
         return R.success(eventPage);
     }
     @GetMapping("/detail")
     public R detail(String id) {
         LambdaQueryWrapper<Event> queryWrapper = new LambdaQueryWrapper<>();
-        // Event event = eventService.getById(id);
         Event event = eventService.queryById(id);
         if (event == null) return R.error("event does not exist");
         event.setImage("/images/" + event.getImage());

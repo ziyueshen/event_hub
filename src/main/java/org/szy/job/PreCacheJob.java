@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.szy.utils.RedisConstants.CACHE_PRE_KEY;
 
-@Component
+//@Component
 @Slf4j
 public class PreCacheJob {
 
@@ -35,7 +35,7 @@ public class PreCacheJob {
 
 
     // execute every day
-    @Scheduled(cron = "0 0 8 * * *")   // sec, min, hr, day, mon, yr
+    @Scheduled(cron = "0 30 11 * * *")   // sec, min, hr, day, mon, yr
     public void doCacheRecommendUser() {
         QueryWrapper<Event> queryWrapper = new QueryWrapper<>();
         queryWrapper.select("id");

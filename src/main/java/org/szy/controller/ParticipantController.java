@@ -28,12 +28,6 @@ public class ParticipantController {
     private EventService eventService;
     @PostMapping("/join")
     public R signup(@RequestBody Event event) {
-//        Participant participant = new Participant();
-//        participant.setActivityID(event.getId());
-//        Long userId = BaseContext.getCurrentId();
-//        participant.setUserID(userId);
-//        participant.setSignUpTime(LocalDateTime.now());
-//        participantService.save(participant);
         if (!participantService.joinTeam(event)) {
             return R.success("Sorry, you can't join this team.");
         }

@@ -187,8 +187,6 @@ public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements
         User user = userService.getById(userID);
         LambdaQueryWrapper<Event> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(Event::getCity, user.getPreferCity());
-        //queryWrapper.select("id", "category", "event");
-        //queryWrapper.isNotNull("tags");
         List<Event> eventList = this.list(queryWrapper);
         String tagsCategory = user.getPreferCategory();
         String tagsFormat = user.getPreferFormat();

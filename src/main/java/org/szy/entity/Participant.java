@@ -7,6 +7,5 @@ import java.time.LocalDateTime;
 public class Participant {
     private Long userID;
     private Long activityID;
-    // private Integer status;
     private LocalDateTime signUpTime;
 }
